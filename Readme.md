@@ -1,19 +1,32 @@
-Hidayat Taufiqur Rahmah Achmad
-Moza Sajidah Putri Al Muzaffar
+# Your Name
+## Hidayat Taufiqur Rahmah Achmad
+## Moza Sajidah Putri Al Muzaffar
 
 ## Screenshot
-![](./tenor.gif)
+
+![LandingPage](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/Landingpage.png)
+![Introduction](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/Introduction.png)
+![AboutUs](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/AboutUs.png)
+![MeetTheTeam](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/MeetTheTeam.png)
+![Est](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/Est.png)
+![blogAblog!](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/blogAblog!.png)
+![StartBlogging](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/StartBlogging.png)
+![Preview](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/Preview.png)
+![ContentPreview](https://github.com/svnflxvver/prepation-task-se/blob/main/MozaSajidahPutriAlMuzaffar/Screenshots/ContentPreview.png)
 
 ## Tech Stack
+
 1. HTML
 2. CSS
-3. NodeJS
-4. ExpressJS
-5. Ejs
-6. MongoDB
+3. JavaScript
+4. NodeJS
+5. ExpressJS
+6. EJS
+7. MongoDB
 
 ## Repository
-1. [BackEnd] 
+
+1. [BackEnd](https://github.com/hidayattaufiqur/blogAblog-Backend)
 2. [FrontEnd](https://github.com/svnflxvver/blogAblog-Frontend)
 
 ## Contributors
@@ -21,6 +34,4 @@ Moza Sajidah Putri Al Muzaffar
 1. [Hidayat Taufiqur Rahmah Achmad](https://github.com/hidayattaufiqur)
 2. [Moza Sajidah Putri Al Muzaffar](https://github.com/svnflxvver)
 
-## Live Demo  (Optional)
-
-helloproclub.github.io
+## Live Demo (Optional)
