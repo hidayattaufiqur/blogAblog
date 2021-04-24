@@ -1,3 +1,4 @@
+const cool = require('cool-ascii-faces')
 const express = require('express')
 const mongoose = require('mongoose')
 const Article = require('./models/article')
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 app.use('/public', express.static('public'));
+app.get('/cool', (req, res) => res.send(cool()))
 
 app.get('/', async (req, res) => {
     res.render('articles/index')
