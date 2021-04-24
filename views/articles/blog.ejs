@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css">
+  <link href= "/public/assets/aboutUs.css" rel="stylesheet" type="text/css">
+  <link href= "/public/assets/blog.css" rel="stylesheet" type="text/css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+
+</head>
+<body style="background-color: #CAB5A6;">
+    
+    <header>
+      <nav class="main-nav">
+          <ul>
+            <li><a href="/" class="logo">blogAblog.</a></li>
+            <li><a href="/" class="home">Home</a></li>
+            <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
+            <li><a href="/articles/blog" class="blog">Blogs</a></li>
+          </ul>
+        </nav>
+      </header>
+  
+    <div class="container">
+    <br>
+    <br>
+    <br>
+    <a href="/articles/new" class="btn btn-dark mb-4 mt-4">New Article</a>
+    <% articles.forEach(article => { %>
+
+      <div class="p-4 p-md-5 mb-4 text-white rounded" style="background-color: #8F7A69      ;">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic mb-4"><%= article.title %></h1>
+          <div class="card-subtitle text-white mb-2">
+            <a style="font-style: italic;">
+              <%= article.createdAt.toDateString() %> at
+              <%= article.createdAt.toLocaleTimeString() %>
+              by
+              <a class="author" style="color: #DAC7B9; text-decoration: underline;">
+                <%= article.author %>
+              </a>
+            </a>
+          </div>
+          <p class="lead my-2"><%= article.description %></p>
+          <p class="lead mb-0"><a href="blog/<%= article.slug %>" class="text-white fw-bold" style="font-style: italic;">Continue reading...</a></p>
+        </div>
+      </div>
+    <% }) %>
+    <nav style="scroll-behavior: smooth;" class="nav mt-4 mb-4" aria-label="Pagination">
+        <a class="btn btn-outline-dark" href="#">Back to Top</a>
+      </nav>
+</div>
+</body>
+</html>

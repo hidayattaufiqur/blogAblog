@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+body,
+ul,
+li,
+h1,
+h2,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+p {
+  font-size: 19px;
+}
+
+header {
+  background-color: #AD9B86;
+  padding: 24px 30px;
+  text-align: left;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner img {
+  max-width: 100%
+}
+
+.banner .aboutUs {
+  color: #675347;
+  font-size: 60px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav {
+  position: initial;
+  top: 50px;
+  z-index: 1;
+}
+
+nav ul {
+  white-space: nowrap;
+  max-width: 1300px;
+  margin: 0px auto;
+  text-align: right;
+}
+
+nav li {
+  width: 20%;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+nav li a.aboutUs {
+  position: relative;
+  left: 38px;
+  color: #675347;
+}
+
+nav li a.home {
+  position: relative;
+  left: 70px;
+  color: #675347;
+}
+
+nav li a.blog {
+  color: #675347;
+  position: relative;
+  left: -50px;
+
+}
+
+nav li a.logo {
+  position: relative;
+  left: -390px;
+  text-decoration: none;
+  color: #675347;
+  /* right: 187%; */
+}
+
+nav li a {
+  text-decoration: none;
+  color: #675347;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+nav li a.logo:hover {
+  text-decoration: none;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #E5DBCD;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.wrapper{
+  margin-top: 4%;
+}
+
+.wrapper h1{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  color: #675347;
+  margin-bottom: 85px;
+  text-align: center;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  flex-wrap: wrap;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.team .team_member{
+  background: #F9F4EC;
+  margin: 25px;
+  margin-bottom: 50px;
+  width: 490px;
+  padding: 20px;
+  line-height: 25px;
+  color: #795f4b;  
+  position: relative;
+}
+
+.team .team_member h3{
+  color: #492D18;
+  font-size: 26px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.team .team_member p.role{
+  color: #492D18;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #E5DBCD;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 0;
+}
+
+section.query {
+  background: #F7F2E9;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+
+section.query h2 {
+  font-size: 36px;
+}
+
+form input {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 28px;
+  border: 4px solid white;
+}
+
+form input:focus {
+  border: 4px dashed #4b4b4b;
+  outline: none;
+}
+
+form input:valid {
+  border: 4px solid #71d300;
+}
+
+footer {
+  background: #AD9B86;
+  color: #391F0F;
+  padding: 13px;
+  text-align: center;
+}
+
+footer p.copyright{
+  font-size: 20px;
+  padding: 14px;
+}
+
+/* responsive styles */
+
+@media screen and (max-width: 1400px) {
+  .banner .aboutUs {
+    font-size: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  .banner .aboutUs {
+    font-size: 35px;
+  }
+  nav li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .banner .aboutUs {
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+  }
+  nav li {
+    font-size: 18px;
+  }
+  .wrapper h1{
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .banner .aboutUs {
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+  }
+  nav li {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+  }
+  .wrapper h1{
+    font-size: 30px;
+  }
+  header,
+  nav {
+    position: relative;
+    top: 0;
+  }
+}

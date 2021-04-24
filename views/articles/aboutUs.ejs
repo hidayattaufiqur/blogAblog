@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/assets/aboutUs.css"/>
+    <title>About Us.</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" class="logo">blogAblog.</a></li>
+          <li><a href="/" class="home">Home</a></li>
+          <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
+          <li><a href="/articles/blog" class="blog">Blogs</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <img src="/public/assets/img/banner2.png" alt="About Us Banner" />
+      <div class="aboutUs">
+        <h2>About Us</h2>
+      </div>
+    </section>
+
+    <div class="wrapper">
+      <h1>Meet the Team</h1>
+
+      <div class="team">
+        <div class="team_member">
+          <div class="team_img">
+            <img src="/public/assets/img/Moza.png" alt="Team_image" />
+          </div>
+          <h3>Moza Sajidah</h3>
+          <p class="role">In charge of Frontend.</p>
+          <p>
+            A first year Computer Science Long Distance Learner at Telkom
+            University, currently residing in the Kingdom of Bahrain. An
+            Introvert at heart whose entire life knows how to acknowledge beauty
+            in the simplicity of things.
+          </p>
+        </div>
+
+        <div class="team_member">
+          <div class="team_img">
+            <img src="/public/assets/img/Dayat.png" alt="Team_image" />
+          </div>
+          <h3>Hidayat Taufiqur</h3>
+          <p class="role">In charge of Backend.</p>
+          <p>
+            Sup, the name’s Hidayat Taufiqur, a 19-year-old undergraduate
+            student majoring in Informatics. Oh and btw legend has it whoever
+            reads this through the end will have a fantastic day. <br />
+            <br />
+            p.s. limited to 2 reading times per week, use wisely
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="query">
+      <h2>Got anything to ask?</h2>
+      <p>Reach us out!</p>
+      <form action="/newMail" method="POST">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Type in your email here"
+        />
+      </form>
+    </section>
+
+    <footer>
+      <p class="copyright">Est. 2021</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href= "/public/assets/aboutUs.css" rel="stylesheet" type="text/css" />
+    <link href= "/public/assets/blog.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<header>
+    <nav class="main-nav">
+        <ul>
+          <li><a href="/" class="logo">blogAblog.</a></li>
+          <li><a href="/" class="home">Home</a></li>
+          <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
+          <li><a href="/articles/blog" class="blog">Blogs</a></li>
+        </ul>
+      </nav>
+</header>
+
+<br>
+
+<div>
+    <label for="title">Title</label>
+    <input style="background-color: #8F7A69; color: white" required value="<%= article.title %>" type="text" name="title" id="title" class="form-control mt-1 mb-1">
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <textarea style="background-color: #8F7A69; color: white" type="text" name="description" id="description" class="form-control mt-1 mb-1" ><%= article.description%></textarea>
+</div>
+<div class="form-group text-dark">
+    <label for="title">Written by</label>
+    <input style="background-color: #8F7A69; color: white" required value="<%= article.author %>" type="text" name="author" id="author" class="form-control mt-1 mb-1">
+</div>
+<div class="form-group input-lg-10">
+    <label for="markdown">Markdown</label>
+    <textarea style="background-color: #8F7A69; color: white" required type="text" name="markdown" id="markdown" class="form-control"><%= article.markdown%></textarea>
+</div>
+
+<a href="/articles/blog" class="btn btn-danger mt-2">Cancel</a>
+<button type="submit" class="btn btn-success mt-2">Save</button> 
