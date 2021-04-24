@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-require('mongoose-type-email')
+const mongoose = require('mongoose')
 const marked = require('marked')
 const createdDomPurifier = require('dompurify')
 const slugify = require('slugify')
