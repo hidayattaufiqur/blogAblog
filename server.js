@@ -49,3 +49,4 @@ app.use('/articles', articleRouter)
 app.use('/mail', Form)
 
 app.listen(5000)
+app.listen(process.env.PORT || port, () => console.log('example app is listening at http//localhost:${port}'))
