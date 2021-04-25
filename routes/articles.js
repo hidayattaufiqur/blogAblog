@@ -14,9 +14,6 @@ router.get('/edit/:id', async (req, res) => {
 router.get('/blog/:slug', async (req, res, next) => {
     const article = await Article.findOne({ slug: req.params.slug })
     Article.findOne({ slug: req.params.slug }).then((Article) => {
-        // if(!Article){
-        //     return res.status(404).send();
-        // }
         if (article == null) res.redirect('/')
         res.render('articles/show', { article: article})
     })
@@ -25,9 +22,7 @@ router.get('/blog/:slug', async (req, res, next) => {
 router.get('/api/blog/:slug', async (req, res, next) => {
     const article = await Article.findOne({ slug: req.params.slug })
     Article.findOne({ slug: req.params.slug }).then((Article) => {
-        // if(!Article){
-        //     return res.status(404).send();
-        // }
+
         if (article == null) res.redirect('/')
         res.send(Article)
     })

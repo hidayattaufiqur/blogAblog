@@ -8,6 +8,10 @@ const dompurify = createdDomPurifier(new JSDOM().window)
 
 
 const articleSchema = new mongoose.Schema({
+    author: {
+        type: String
+        // default: "Anonymous"
+    },
     title: {
         type: String,
         required: true
@@ -22,10 +26,6 @@ const articleSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    },
-    author: {
-        type: String,
-        default: "Anonymous"
     },
     slug: {
         type: String,

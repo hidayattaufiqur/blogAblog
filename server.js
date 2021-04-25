@@ -6,7 +6,6 @@ const Form = require('./models/mail')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
-
 const app = express()
 
 mongoose.connect('mongodb+srv://2588:2588@cluster0.hch3f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
