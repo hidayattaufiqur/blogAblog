@@ -6,12 +6,13 @@ const Form = require('./models/mail')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
-
 const app = express()
 
-mongoose.connect('URI'), 
+// Connect to MongoDB
+mongoose.connect('URI', 
 { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true } )
 
+// 
 app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -51,5 +52,5 @@ app.use('/mail', Form)
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
+
 app.listen(5000)
-// app.listen(process.env.PORT || port, () => console.log('example app is listening at http//localhost:${port}'))
