@@ -45,5 +45,3 @@ app.get('/articles/blog', async (req, res) => {
 
 app.use('/articles', articleRouter)
 app.use('/mail', Form)
-
-app.listen(5000)
