@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://2588:2588@cluster0.hch3f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
+mongoose.connect('URI', 
 { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true } )
 
 // 
