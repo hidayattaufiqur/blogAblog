@@ -19,14 +19,13 @@ router.get('/blog/:slug', async (req, res, next) => {
     })
 })
 
-router.get('/api/blog/:slug', async (req, res, next) => {
-    const article = await Article.findOne({ slug: req.params.slug })
-    Article.findOne({ slug: req.params.slug }).then((Article) => {
-
-        if (article == null) res.redirect('/')
-        res.send(Article)
-    })
-})
+// router.get('/api/blog/:slug', async (req, res, next) => {
+//     const article = await Article.findOne({ slug: req.params.slug })
+//     Article.findOne({ slug: req.params.slug }).then((Article) => {
+//         if (article == null) res.redirect('/')
+//         res.send(Article)
+//     })
+// })
 
 router.post('/blog/', async (req, res, next) => {
     req.article = new Article()
@@ -47,8 +46,9 @@ function saveArticleAndRedirect(path) {
     return async (req, res) => {
         let article = req.article
         article.title= req.body.title
+        article.author= req.body.author
         article.description= req.body.description
-        article.markdown= req.body.markdown
+        article.content= req.body.content
         try {
             article = await article.save()
             res.redirect(`/articles/blog/${article.slug}`)

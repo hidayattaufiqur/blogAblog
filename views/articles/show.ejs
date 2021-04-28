@@ -35,7 +35,7 @@
                 <%= article.author %>
             </a>
         </div>
-        <div class="text-dark mb-2"><%= article.createdAt.toDateString() %> at <%= article.createdAt.toLocaleTimeString() %></div>
+        <div class="text-dark mb-2"><%= article.createdAt.toDateString() %> at <%= article.createdAt.toLocaleTimeString('en-US', { timeZone: 'Asia/Jakarta' }) %></div>
         <a href="/articles/blog" class="btn btn-primary">All</a>
         <a href="/articles/new/" class="btn btn-dark text-white">New</a>
         <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary text-white" style="color: white;">Edit</a>

@@ -26,13 +26,14 @@
     <label for="description">Description</label>
     <textarea style="background-color: #8F7A69; color: white" type="text" name="description" id="description" class="form-control mt-1 mb-1" ><%= article.description%></textarea>
 </div>
-<div class="form-group text-dark">
+<div>
     <label for="author">Written by</label>
-    <input style="background-color: #8F7A69; color: white" required value="<%= article.author %>" type="text" name="author" id="author" class="form-control mt-1 mb-1">
-</div>
+    <input style="background-color: #8F7A69; color: white" value="<%= article.author %>" type="text" name="author" id="author" class="form-control mt-1 mb-1">
+    <!-- <textarea style="background-color: #8F7A69; color: white" type="text" name="author" id="author" class="form-control"><%= article.author %></textarea> --> 
+</divrm>
 <div class="form-group input-lg-10">
-    <label for="markdown">Markdown</label>
-    <textarea style="background-color: #8F7A69; color: white" required type="text" name="markdown" id="markdown" class="form-control"><%= article.markdown%></textarea>
+    <label for="content">Content</label>
+    <textarea style="background-color: #8F7A69; color: white" required type="text" name="content" id="content" class="form-control"><%= article.content %></textarea>
 </div>
 
 <a href="/articles/blog" class="btn btn-danger mt-2">Cancel</a>

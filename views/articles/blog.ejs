@@ -37,9 +37,9 @@
           <div class="card-subtitle text-white mb-2">
             <a style="font-style: italic;">
               <%= article.createdAt.toDateString() %> at
-              <%= article.createdAt.toLocaleTimeString() %>
+              <%= article.createdAt.toLocaleTimeString('en-US', { timeZone: 'Asia/Jakarta' }) %>
               by
-              <a class="author" style="color: #DAC7B9; text-decoration: underline;">
+              <a style="color: #DAC7B9; text-decoration: underline;">
                 <%= article.author %>
               </a>
             </a>

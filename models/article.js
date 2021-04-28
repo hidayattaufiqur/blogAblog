@@ -6,20 +6,19 @@ const { JSDOM } = require('jsdom')
 const dompurify = createdDomPurifier(new JSDOM().window)
 
 
-
 const articleSchema = new mongoose.Schema({
-    author: {
-        type: String
-        // default: "Anonymous"
-    },
     title: {
         type: String,
         required: true
     },
+    author: {
+        type: String
+        // default: "Anonymous"
+    },
     description: {
         type: String
     }, 
-    markdown: {
+    content: {
         type: String,
         required: true
     }, 
@@ -43,11 +42,12 @@ articleSchema.pre('validate', function(next) {
         this.slug = slugify(this.title, { lower: true, strict: true })
     }
 
-    if (this.markdown) {
-        this.sanitizedHtml = dompurify.sanitize(marked(this.markdown))
+    if (this.content) {
+        this.sanitizedHtml = dompurify.sanitize(marked(this.content))
     }
     
     next()
 })
+
 
 module.exports = mongoose.model('Article', articleSchema)
