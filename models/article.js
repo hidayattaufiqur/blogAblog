@@ -12,8 +12,8 @@ const articleSchema = new mongoose.Schema({
         required: true
     },
     author: {
-        type: String
-        // default: "Anonymous"
+        type: String,
+        default: "Anonymous"
     },
     description: {
         type: String
