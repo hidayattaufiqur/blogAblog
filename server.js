@@ -8,8 +8,12 @@ const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const app = express()
 
+<<<<<<< HEAD
 // Connect to MongoDB   
 mongoose.connect('mongodb+srv://2588:2588@cluster0.hch3f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
+=======
+mongoose.connect('URI'), 
+>>>>>>> 37d3d890c2f28154cfe9f451552c269220a04765
 { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true } )
 
 app.set('view engine', 'ejs')
@@ -38,15 +42,6 @@ app.post('/newMail', async (req, res, next) => {
                    res.redirect("/aboutUs");
             });
 })
-
-// app.post('/newAuthor', async (req, res, next) => {
-//     var form = new Form();
-//     form.author= req.body.author;
-    
-//     form.save(function(err, form) {
-//                 if (err) return next(err);
-//             });
-// })
 
 app.get('/articles/blog', async (req, res) => {
     const articles = await Article.find().sort({createdAt: 'descending'})

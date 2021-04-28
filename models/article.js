@@ -5,7 +5,6 @@ const slugify = require('slugify')
 const { JSDOM } = require('jsdom')
 const dompurify = createdDomPurifier(new JSDOM().window)
 
-
 const articleSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -48,6 +47,5 @@ articleSchema.pre('validate', function(next) {
     
     next()
 })
-
 
 module.exports = mongoose.model('Article', articleSchema)
