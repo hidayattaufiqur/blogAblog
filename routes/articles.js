@@ -1,6 +1,7 @@
 const express = require('express')
 const Article = require('./../models/article')
 const router = express.Router()
+const app = express()
 
 router.get('/new', (req, res) => {
     res.render('articles/new', { article: new Article })
@@ -15,7 +16,7 @@ router.get('/blog/:slug', async (req, res, next) => {
     const article = await Article.findOne({ slug: req.params.slug })
     Article.findOne({ slug: req.params.slug }).then((Article) => {
         if (article == null) res.redirect('/')
-        res.render('articles/show', { article: article})
+        res.render('articles/show', { article: article })
     })
 })
 
