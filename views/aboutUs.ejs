@@ -20,7 +20,12 @@
     </header>
 
     <section class="banner">
-      <img src="/public/assets/img/banner2-min.webp" alt="About Us Banner" />
+      <!-- <img src="/public/assets/img/banner2-min.webp" alt="About Us Banner" /> -->
+      <picture>
+        <source srcset="/public/assets/img/banner2-min.webp" type="image/webp">
+        <source srcset="/public/assets/img/banner2-min.jpg" type="image/jpeg"> 
+        <img src="/public/assets/img/banner2-min.jpg" alt="About Us Banner">
+      </picture>
       <div class="aboutUs">
         <h2>About Us</h2>
       </div>
