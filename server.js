@@ -11,7 +11,7 @@ const views = require('./views/views')
 const app = express()
 
 mongoose.connect(process.env.URI, 
-{ useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true } )
+{ useNewUrlParser: true, useUnifiedTopology: true } )
 
 app.set('view engine', 'ejs')
 
