@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
+/* Reserve scrollbar space to prevent horizontal layout shift between pages */
+html { scrollbar-gutter: stable; }
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
+
 body,
 ul,
 li,
@@ -51,27 +57,29 @@ nav {
 }
 
 nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
   white-space: nowrap;
   max-width: 1300px;
   margin: 0px auto;
-  text-align: right;
 }
 
 nav li {
-  width: 20%;
-  display: inline-block;
+  display: block;
   font-size: 30px;
 }
 
-nav li a.logo {
-  position: relative;
-  left: -680px;
-  /* right: 300%; */
+/* Push logo to the far left */
+nav li:first-child {
+  margin-right: auto;
 }
+
+/* Remove hard offsets in favor of flex */
+nav li a.logo,
 nav li a.blog {
-  position: relative;
-  left: -60px;
-  /* right: 300%; */
+  position: static;
 }
 
 nav li a {
@@ -86,6 +94,9 @@ nav li a:hover {
 nav li a.logo:hover {
   text-decoration: none;
 }
+
+/* Active link for Home page */
+nav li a.home { text-decoration: underline; }
 
 body {
   background: #e5dbcd;
@@ -160,6 +171,7 @@ footer p.copyright {
 }
 
 @media screen and (max-width: 560px) {
+  nav ul { flex-direction: column; align-items: center; gap: 12px; }
   .banner .welcome {
     font-size: 20px;
     position: absolute;
@@ -168,11 +180,7 @@ footer p.copyright {
   .banner .welcome br {
     display: none;
   }
-  nav li {
-    display: block;
-    width: 100%;
-    margin: 12px 0;
-  }
+  nav li { display: block; width: 100%; margin: 12px 0; }
   article h2 {
     font-size: 30px;
   }

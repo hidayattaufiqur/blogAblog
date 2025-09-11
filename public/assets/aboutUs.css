@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
+/* Reserve scrollbar space to prevent horizontal layout shift between pages */
+html { scrollbar-gutter: stable; }
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
+
 body,
 ul,
 li,
@@ -51,44 +57,33 @@ nav {
 }
 
 nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
   white-space: nowrap;
   max-width: 1300px;
   margin: 0px auto;
-  text-align: right;
 }
 
 nav li {
-  width: 20%;
-  display: inline-block;
+  display: block;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: normal; /* match Home page to avoid width shift */
 }
 
-nav li a.aboutUs {
-  position: relative;
-  left: 38px;
-  color: #675347;
+/* Push logo to the far left */
+nav li:first-child {
+  margin-right: auto;
 }
 
-nav li a.home {
-  position: relative;
-  left: 70px;
-  color: #675347;
-}
-
-nav li a.blog {
-  color: #675347;
-  position: relative;
-  left: -50px;
-
-}
-
+/* Flex-based alignment; remove hard offsets */
+nav li a.aboutUs,
+nav li a.home,
+nav li a.blog,
 nav li a.logo {
-  position: relative;
-  left: -390px;
-  text-decoration: none;
+  position: static;
   color: #675347;
-  /* right: 187%; */
 }
 
 nav li a {
@@ -103,6 +98,18 @@ nav li a:hover {
 nav li a.logo:hover {
   text-decoration: none;
 }
+
+/* Active link for About Us page */
+nav li a.aboutUs {
+  text-decoration: underline;
+}
+
+/* Team member name links */
+.team .team_member h3 a { color: #492D18; text-decoration: none; }
+.team .team_member h3 a:visited { color: #492D18; }
+.team .team_member h3 a:hover,
+.team .team_member h3 a:focus,
+.team .team_member h3 a:active { color: #492D18; text-decoration: underline; }
 
 
 *{
@@ -191,6 +198,18 @@ section.query h2 {
   font-size: 36px;
 }
 
+.cta-container { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+.cta-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #E5DBCD;
+  color: #675347;
+  text-decoration: none;
+  border: 1px solid #D2C6B9;
+}
+.cta-btn:hover, .cta-btn:focus { text-decoration: underline; color: #675347; }
+
 form input {
   margin: 20px 0;
   padding: 10px 20px;
@@ -251,6 +270,7 @@ footer p.copyright{
 }
 
 @media screen and (max-width: 560px) {
+  nav ul { flex-direction: column; align-items: center; gap: 12px; }
   .banner .aboutUs {
     font-size: 25px;
     position: absolute;

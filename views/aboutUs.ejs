@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/assets/aboutUs.css"/>
+    <link rel="icon" href="/public/assets/img/favicon.svg" type="image/svg+xml" />
     <title>About Us.</title>
   </head>
 
   <body>
     <header>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/" class="logo">blogAblog.</a></li>
-          <li><a href="/" class="home">Home</a></li>
-          <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
-          <li><a href="/articles/blog" class="blog">Blogs</a></li>
-        </ul>
-      </nav>
+      <%- include('partials/navbar') %>
     </header>
 
     <section class="banner">
@@ -38,7 +32,7 @@
           <div class="team_img">
             <img src="/public/assets/img/Moza.png" alt="Team_image" />
           </div>
-          <h3>Moza Sajidah</h3>
+          <h3><a href="https://linkedin.com/in/mozasajidah" target="_blank" rel="noopener noreferrer">Moza Sajidah</a></h3>
           <p class="role">In charge of Frontend.</p>
           <p>
             A first year Computer Science Long Distance Learner at Telkom
@@ -52,7 +46,7 @@
           <div class="team_img">
             <img src="/public/assets/img/Dayat.png" alt="Team_image" />
           </div>
-          <h3>Hidayat Taufiqur</h3>
+          <h3><a href="https://linkedin.com/in/hidayattaufiqur" target="_blank" rel="noopener noreferrer">Hidayat Taufiqur</a></h3>
           <p class="role">In charge of Backend.</p>
           <p>
             Sup, the name’s Hidayat Taufiqur, a 19-year-old undergraduate
@@ -67,15 +61,11 @@
 
     <section class="query">
       <h2>Got anything to ask?</h2>
-      <p>Reach us out!</p>
-      <form action="/newMail" method="POST">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Type in your email here"
-        />
-      </form>
+      <p>Reach out on LinkedIn — we’re quick there.</p>
+      <div class="cta-container">
+        <a class="cta-btn" href="https://linkedin.com/in/mozasajidah" target="_blank" rel="noopener noreferrer">Message Moza</a>
+        <a class="cta-btn" href="https://linkedin.com/in/hidayattaufiqur" target="_blank" rel="noopener noreferrer">Message Hidayat</a>
+      </div>
     </section>
 
     <footer>

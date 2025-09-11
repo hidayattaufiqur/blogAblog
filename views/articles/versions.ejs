@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/public/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link href="/public/assets/styles.css" rel="stylesheet" type="text/css">
+  <title>Version History - <%= article.title %></title>
+</head>
+<body style="background-color: #CAB5A6;">
+  <header>
+    <%- include('../partials/navbar') %>
+  </header>
+  <div class="container">
+    <br><br><br>
+    <h1 class="mb-3">Version History</h1>
+    <p class="text-muted">Article: <strong><%= article.title %></strong> by <%= article.author %></p>
+    <a href="/articles/blog/<%= article.slug %>" class="btn btn-outline-secondary mb-3">Back to Article</a>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Edited At</th>
+            <th>Editor</th>
+            <th>Title</th>
+            <th>Slug</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% versions.forEach(v => { %>
+            <tr>
+              <td><%= v.version_no %></td>
+              <td><%= new Date(v.created_at).toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }) %></td>
+              <td><%= v.editor || 'Unknown' %></td>
+              <td><%= v.title %></td>
+              <td><code><%= v.slug %></code></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+

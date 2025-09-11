@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/assets/img/favicon.svg" type="image/svg+xml" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
-    <link href= "/public/assets/aboutUs.css" rel="stylesheet" type="text/css" />
     <link href= "/public/assets/blog.css" rel="stylesheet" type="text/css" />
     <title>Blog</title> 
 </head>
@@ -35,15 +35,32 @@
                 <%= article.author %>
             </a>
         </div>
-        <div class="text-dark mb-2"><%= article.createdAt.toDateString() %> at <%= article.createdAt.toLocaleTimeString('en-US', { timeZone: 'Asia/Jakarta' }) %></div>
-        <a href="/articles/blog" class="btn btn-primary">All</a>
-        <a href="/articles/new/" class="btn btn-dark text-white">New</a>
-        <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary text-white" style="color: white;">Edit</a>
-        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <div class="text-dark mb-2"><%= article.createdAt.toDateString() %> at <%= article.createdAt.toLocaleTimeString('en-US', { timeZone: 'Asia/Jakarta' }) %> • <%= readingTime %> min read</div>
+        <div class="mb-3">
+          <a href="/articles/blog" class="btn btn-outline-secondary">All</a>
+          <a href="/articles/new/" class="btn btn-primary">New</a>
+          <a href="/articles/edit/<%= article.id %>" class="btn btn-outline-primary">Edit</a>
+          <a href="/articles/versions/<%= article.id %>" class="btn btn-outline-dark">History</a>
+          <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline" onsubmit="return confirm('Move this article to trash?');">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
+        </div>
         <div class="mt-3 p-2 p-md-3 mb-4 text-white rounded card-body text-white" style="background-color: #8F7A69; font-family: Georgia;">
-            <%- article.sanitizedHtml %>
+            <div class="article-inner">
+              <%- article.sanitizedHtml %>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mb-5">
+          <div>
+            <% if (prevArticle && prevArticle.slug !== article.slug) { %>
+              <a class="btn btn-outline-dark" href="/articles/blog/<%= prevArticle.slug %>">« <%= prevArticle.title %></a>
+            <% } %>
+          </div>
+          <div>
+            <% if (nextArticle && nextArticle.slug !== article.slug) { %>
+              <a class="btn btn-outline-dark" href="/articles/blog/<%= nextArticle.slug %>"><%= nextArticle.title %> »</a>
+            <% } %>
+          </div>
         </div>
     </div>
 </body>

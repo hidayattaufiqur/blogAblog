@@ -1,5 +1,11 @@
 /* stylelint-disable selector-list-comma-newline-after */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+/* Reserve scrollbar space to prevent horizontal layout shift between pages */
+html { scrollbar-gutter: stable; }
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
 ul,
 h1,
 h2,
@@ -57,31 +63,35 @@ nav {
 }
 
 nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
   white-space: nowrap;
   max-width: 1300px;
   margin: 0px auto;
-  text-align: right;
 }
 
 nav li {
-  width: 20%;
-  display: inline-block;
+  display: block;
   font-size: 30px;
 }
+
+/* Push logo to the far left */
+nav li:first-child { margin-right: auto; }
 
 nav li a.aboutUs {
   color: #675347;
 }
 
-nav li a.logo {
-  position: relative;
-  right: 187%;
-}
+/* Remove hard positioning in favor of flex */
+nav li a.logo { position: static; }
 
-nav li a {
-  text-decoration: none;
-  color: #675347;
-}
+nav li a { text-decoration: none; color: #675347; }
+/* Keep link color consistent across states */
+nav li a:visited { color: #675347; }
+nav li a:hover, nav li a:focus { color: #675347; text-decoration: underline; }
+nav li a:active { color: #675347; }
 
 
 nav li a:hover {
@@ -91,6 +101,16 @@ nav li a:hover {
 nav li a.logo:hover {
   text-decoration: none;
 }
+
+/* Active link for Blog page */
+nav li a.blog { text-decoration: underline; }
+/* Non-active links default to no underline, but underline on hover */
+nav li a.home, nav li a.logo, nav li a.aboutUs { text-decoration: none; }
+nav li a.home:hover, nav li a.logo:hover, nav li a.aboutUs:hover { text-decoration: underline; }
+/* Ensure only Blog is active on blog pages */
+nav li a.home,
+nav li a.logo,
+nav li a.aboutUs { text-decoration: none; }
 
 
 *{
@@ -206,6 +226,7 @@ footer p.copyright{
   font-size: 20px;
   padding: 17px;
 }
+
 
 /* responsive styles */
 
@@ -347,3 +368,17 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/* Fine-tune rendering inside the article textbox without changing its look */
+.article-inner { margin: 8px 10px; padding: 12px 16px; line-height: 1.7; overflow-wrap: anywhere; word-wrap: break-word; }
+.article-inner p { margin: .75rem 0; }
+.article-inner ul,
+.article-inner ol { padding-left: 1.75rem; margin: .5rem 0 1rem; list-style-position: inside; }
+.article-inner li { margin: .25rem 0; }
+.article-inner img,
+.article-inner video,
+.article-inner canvas,
+.article-inner iframe { max-width: 100%; height: auto; }
+.article-inner blockquote { border-left: 4px solid rgba(255,255,255,0.5); margin: 1rem 0; padding: .5rem 1rem; }
+.article-inner pre { background: rgba(0,0,0,0.15); padding: .5rem .75rem; border-radius: 4px; overflow: auto; }
+.article-inner code { background: rgba(0,0,0,0.1); padding: 0 .2rem; border-radius: 3px; }

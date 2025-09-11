@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="/public/assets/styles.css" />
+    <link rel="icon" href="/public/assets/img/favicon.svg" type="image/svg+xml" />
 
     <title>blogAblog.</title>
   </head>
 
   <body>
     <header>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/" class="logo">blogAblog.</a></li>
-          <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
-          <li><a href="/articles/blog" class="blog">Blogs</a></li>
-        </ul>
-      </nav>
+      <%- include('partials/navbar') %>
     </header>
 
     <section class="banner">
@@ -49,4 +44,4 @@
       <p class="copyright">Est. 2021</p>
     </footer>
   </body>
-</html>
+  </html>

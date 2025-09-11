@@ -3,32 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/public/assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css">
-  <link href= "/public/assets/aboutUs.css" rel="stylesheet" type="text/css">
   <link href= "/public/assets/blog.css" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
 
 </head>
 <body style="background-color: #CAB5A6;">
-    
     <header>
-      <nav class="main-nav">
-          <ul>
-            <li><a href="/" class="logo">blogAblog.</a></li>
-            <li><a href="/" class="home">Home</a></li>
-            <li><a href="/aboutUs" class="aboutUs">About Us</a></li>
-            <li><a href="/articles/blog" class="blog">Blogs</a></li>
-          </ul>
-        </nav>
+      <%- include('../partials/navbar') %>
       </header>
-  
     <div class="container">
     <br>
     <br>
     <br>
-    <a href="/articles/new" class="btn btn-dark mb-4 mt-4">New Article</a>
+    <a href="/articles/new" class="btn btn-primary mb-4 mt-4">New Article</a>
     <% articles.forEach(article => { %>
 
       <div class="p-4 p-md-5 mb-4 text-white rounded" style="background-color: #8F7A69      ;">

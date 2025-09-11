@@ -1,14 +1,14 @@
 const express = require('express')
 const app = express()
-const Article = require('./../models/article')
-const Form = require('./../models/mail')
+const Articles = require('../data/articles')
+const Emails = require('../data/emails')
 
 app.get('/', async (req, res) => {
     res.render('index')
 })
 
 app.get('/articles/blog', async (req, res) => {
-    const articles = await Article.find().sort({createdAt: 'descending'})
+    const articles = await Articles.findAll()
     res.render('articles/blog', { articles: articles })
 })
 
@@ -17,14 +17,12 @@ app.get('/aboutUs', async (req, res) => {
 })
 
 app.post('/newMail', async (req, res, next) => {
-    var form = new Form();
-    form.email= req.body.email;
-    
-    form.save(function(err, form) {
-                if (err) return next(err);
-                    if (err) return next(err);
-                   res.redirect("/aboutUs");
-            });
+    try {
+        await Emails.create(req.body.email)
+        res.redirect('/aboutUs')
+    } catch (err) {
+        next(err)
+    }
 })
 
 module.exports = app
