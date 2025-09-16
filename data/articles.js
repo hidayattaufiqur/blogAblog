@@ -1,11 +1,19 @@
 const db = require('../db')
 const slugify = require('slugify')
-const { marked } = require('marked')
+const MarkdownIt = require('markdown-it')
 const createDomPurify = require('dompurify')
 const { JSDOM } = require('jsdom')
 
 const window = new JSDOM('').window
 const DOMPurify = createDomPurify(window)
+
+// Configure markdown-it (GFM-like features)
+const md = new MarkdownIt({
+  html: true,       // allow inline HTML; sanitized below
+  linkify: true,    // autolink plain URLs
+  typographer: true,
+  breaks: false,
+})
 
 function toArticle(row) {
   if (!row) return null
@@ -24,7 +32,8 @@ function toArticle(row) {
 
 function computeContent({ title, content }) {
   const slug = title ? slugify(title, { lower: true, strict: true }) : null
-  const sanitizedHtml = content ? DOMPurify.sanitize(marked.parse(content)) : null
+  const html = content ? md.render(content) : null
+  const sanitizedHtml = html ? DOMPurify.sanitize(html) : null
   return { slug, sanitizedHtml }
 }
 

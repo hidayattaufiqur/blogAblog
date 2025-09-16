@@ -25,6 +25,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsdom": "^24.1.0",
+    "markdown-it": "^14.1.0",
     "marked": "^4.3.0",
     "method-override": "^3.0.0",
     "pg": "^8.11.5",
