@@ -379,7 +379,6 @@ h1, h2, h3, h4, h5, h6 {
 .article-inner li { padding-left: .25rem; }
 .article-inner li { margin: .25rem 0; }
 .article-inner img { display: block; margin: 1rem 0; }
-.article-inner 
 .article-inner video,
 .article-inner canvas,
 .article-inner iframe { max-width: 100%; height: auto; }
